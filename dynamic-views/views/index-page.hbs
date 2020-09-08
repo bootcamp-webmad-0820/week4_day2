@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My first view</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <h1>Bienvenid@ al campus de {{{campus}}}!</h1>
+    <p>Estamos encantados de tenerte con nosotros, {{name}}</p>
+
+    {{#if activated}}
+    <p>Te informamos de que tu matrícula ya está acticvada!</p>
+    {{else}}
+    <p>AVISO: tu matrícula aún no ha sido activada</p>
+    {{/if}}
+
+    {{#unless payed}}
+    <strong>AVISO:</strong> aún no hemos recibido el pago de tu matrícla
+    {{/unless}}
+
+    <h2>Asignaturas</h2>
+    <ul>
+        {{#each subjects}}
+        <li>{{this}}</li>
+        {{else}}
+        <li>Aún no disponemos del listado de asignaturas</li>
+        {{/each}}
+    </ul>
+
+    <h2>Dirección</h2>
+    {{#with address}}
+    <ul>
+        <li>Calle {{street}}, número {{number}} </li>
+        <li>Código postal: {{code}} </li>
+    </ul>
+    {{/with}}
+
+
+
+
+
+</body>
+
+</html>
